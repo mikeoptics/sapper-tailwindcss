@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="theme-color" content="#333333">
+
+	%sapper.base%
+
+	<link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<!-- Sapper creates a <script> tag containing `src/client.js`
+	     and anything else it needs to hydrate the app and
+	     initialise the router -->
+	%sapper.scripts%
+
+	<!-- Sapper generates a <style> tag containing critical CSS
+	     for the current page. CSS for the rest of the app is
+	     lazily loaded when it precaches secondary pages -->
+	%sapper.styles%
+
+	<!-- This contains the contents of the <svelte:head> component, if
+	     the current page has one -->
+	%sapper.head%
+</head>
+<body class="mb-6">
+	<!-- The application will be rendered inside this element,
+	     because `src/client.js` references it -->
+	<div id="sapper">%sapper.html%</div>
+</body>
+
+
+<footer class="flex flex-col justify-between items-center px-6 py-2 bg-white dark:bg-gray-800 sm:flex-row border-t-2 border-indigo-300 mt-6">
+		<span class="text-xl font-bold text-gray-800 dark:text-white">The Optotypist</span>
+
+		<p class="py-2 text-gray-800 dark:text-white sm:py-0">All rights reserved</p>
+
+</footer>
+</html>
